@@ -6,7 +6,7 @@ cogratWordsList = ["Nice", "Great", "Wonderful", "Magnificent", "Good job", "Inc
 word = random.choice(wordsList)
 word2= ""
 finalWord = ""
-life = 5
+life = 7
 flag = False
 answer = []
 
