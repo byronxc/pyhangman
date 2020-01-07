@@ -1,24 +1,115 @@
 import random
 
+draw = ["""
+  ______
+  |    |      
+  |    o     
+  |   /|\    
+  |    |
+  |   / \ 
+ _|_
+""",
+"""
+  ______
+  |    |      
+  |    o     
+  |   /|\    
+  |    |
+  |   /  
+ _|_
+""",
+"""
+  ______
+  |    |      
+  |    o      
+  |   /|\    
+  |    |
+  |     
+ _|_
+""",
+"""
+  ______
+  |    |      
+  |    o      
+  |   /|\     
+  |    
+  |    
+ _|_
+""",
+"""
+  ______
+  |    |      
+  |    o      
+  |   /|     
+  |    
+  |     
+ _|_
+""",
+"""
+  ______
+  |    |      
+  |    o      
+  |    |     
+  |    
+  |     
+ _|_
+""",
+"""
+  ______
+  |    |      
+  |    o      
+  |        
+  |    
+  |     
+ _|_
+""",
+"""
+  ______
+  |    |      
+  |          
+  |         
+  |    
+  |     
+ _|_
+""",
+"""
+  ______
+  |          
+  |          
+  |        
+  |    
+  |     
+ _|_
+"""]
+
 wordsList = ["python", "computer", "barcelona", "java", "integer", "joy", "college", "california"]
 cogratWordsList = ["Nice", "Great", "Wonderful", "Magnificent", "Good job", "Incredible", "Super"]
-
-word = random.choice(wordsList)
 word2= ""
 finalWord = ""
-life = 7
+life = 8
 flag = False
 answer = []
 
-for x in range(len(word)):
-        answer.insert(x, '_')
+
 
 print("Hangman Game\n")
+print("1. Choose a word")
+print("2. Random word \n")
+option = input()
+if(option == "1"):
+    word = input("Enter the word: ")
+else:
+    word = random.choice(wordsList)
+
+for x in range(len(word)):
+        answer.insert(x, '_')
+        
 name = input("Enter your name: ")
 print("Welcome " + name + "!!\n\n" )
 
 while(life != 0):
     congratWord = random.choice(cogratWordsList)
+    print(draw[life])
     print(answer)
     letter = input("Enter a letter: ")
     if(letter[0] not in word):
@@ -27,8 +118,6 @@ while(life != 0):
         if life == 0: 
             print("Game Over")
             print("The word was " + word)
-        else:
-            print("You have " + str(life) + " more chances")
     elif letter[0] not in finalWord:
         for x in range(len(word)):
             if letter[0] == word[x]:
