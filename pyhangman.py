@@ -117,7 +117,8 @@ while(life != 0):
         life -=1
         if life == 0: 
             print("Game Over")
-            print("The word was " + word)
+            print("The word was " + word + "\n")
+            print(draw[life])
     elif letter[0] not in finalWord:
         for x in range(len(word)):
             if letter[0] == word[x]:
